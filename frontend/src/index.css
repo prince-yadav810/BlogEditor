@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------
+   Design tokens — Medium editorial palette
+   ------------------------------------------------ */
+:root {
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #757575;
+  --text-muted: #b0b0b0;
+  --accent: #1a8917;
+  --border: #e8e8e8;
+  --danger: #c0392b;
+
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body: 'Source Serif 4', 'Georgia', serif;
+  --font-ui: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ------------------------------------------------
+   Base reset & layout
+   ------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.75;
+}
+
+/* ------------------------------------------------
+   Lexical editor content styles
+   These target the contenteditable area inside the
+   editor — Lexical renders plain DOM nodes so we
+   style them here rather than via Tailwind utilities.
+   ------------------------------------------------ */
+.editor-input {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  outline: none;
+  min-height: 60vh;
+  padding: 0;
+}
+
+.editor-input p {
+  margin: 0 0 1.1em 0;
+}
+
+.editor-input h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 2rem 0 0.75rem 0;
+  letter-spacing: -0.015em;
+}
+
+.editor-input h2 {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 1.75rem 0 0.6rem 0;
+  letter-spacing: -0.01em;
+}
+
+.editor-input ul {
+  margin: 0.5em 0 1em 0;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.editor-input ul li {
+  margin-bottom: 0.35em;
+}
+
+/* nested list — slightly different bullet */
+.editor-input ul ul {
+  list-style-type: circle;
+}
+
+.editor-input strong {
+  font-weight: 600;
+}
+
+.editor-input em {
+  font-style: italic;
+}
+
+.editor-input code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: #f0efed;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+/* placeholder text */
+.editor-placeholder {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 20px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ------------------------------------------------
+   Scrollbar — keep it subtle
+   ------------------------------------------------ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
