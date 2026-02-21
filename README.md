@@ -195,8 +195,8 @@ npx vercel --prod
 
 | Service | URL |
 |---------|-----|
-| Frontend | _TBD after deploy_ |
-| Backend | _TBD after deploy_ |
+| Frontend | https://blog-editor-indol.vercel.app |
+| Backend | https://smart-blog-editor-api-f7u7.onrender.com |
 
 ---
 
